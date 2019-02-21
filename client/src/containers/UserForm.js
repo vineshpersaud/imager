@@ -2,6 +2,14 @@ import React, {Component} from 'react';
 
 class UserForm extends Component {
 
+  handleOnChange = e =>{
+
+  }
+  handleOnSubmit = e =>{
+      e.preventDefault()
+      alert('Working')
+  }
+
   render(){
     return (
 
@@ -9,7 +17,7 @@ class UserForm extends Component {
       <div>
         <h1> User Signup </h1>
       </div>
-        <form>
+        <form onSubmit={this.handleOnSubmit}>
         <div>
            <label htmlFor="username">Username:</label>
            <input type="text" name="username"/>
@@ -24,6 +32,7 @@ class UserForm extends Component {
            <label htmlFor="password">Password:</label>
            <input type="password" name="password"/>
         </div>
+        <button type="submit">Create User</button>
       </form>
     </div>)
   }
