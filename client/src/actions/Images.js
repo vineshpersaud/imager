@@ -8,7 +8,7 @@ const setImages = images => {
 
 export const getImages = () => {
     return dispatch => {
-      return fetch(`http://localhost:3000/api/images`)
+      return fetch(`http://localhost:3000/images`)
         .then(response => response.json())
         .then(images =>dispatch(setImages(images)))
         .catch(error => console.log(error));

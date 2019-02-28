@@ -12,7 +12,6 @@ class Images extends Component {
 
 
   render(){
-      console.log(this.props.images)
     return (
       <div className="ImagesContainer">
         <h1>Images</h1>
