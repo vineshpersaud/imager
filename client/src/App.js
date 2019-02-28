@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import UserForm from './containers/UserForm.js'
+import ImageForm from './containers/ImageForm.js'
 import Images from './containers/Images.js'
 
 class App extends Component {
@@ -8,8 +9,7 @@ class App extends Component {
     return (
 
       <div className="App">
-        <h1>hello</h1>
-        <UserForm/>
+        <ImageForm/>
         <Images/>
       </div>
     );
