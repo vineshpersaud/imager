@@ -5,7 +5,7 @@ const ImageCard = ({ image }) => (
     <h3>{image.title}</h3>
     <h3>{image.description}</h3>
     <div>
-      <img src={image.image} alt={image.description}/>
+      <img src={"http://localhost:3000"+image.image} alt={image.description}/>
       </div>
   </div>
 )

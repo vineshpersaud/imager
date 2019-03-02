@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 
-import {getImages} from '../actions/Images';
+import {getImages} from '../actions/images';
 import ImageCard from '../components/ImageCard';
 
 class Images extends Component {

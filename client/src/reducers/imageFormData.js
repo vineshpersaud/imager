@@ -1,14 +1,14 @@
 const initialState = {
   title: '',
-  description: '', 
-  image: '',
+  description: '',
+  image: ''
 }
 
 export default (state = initialState, action) => {
 
   switch(action.type) {
     case 'UPDATED_DATA':
-      return action.surfboardFormData;
+      return action.imageFormData;
 
     case 'RESET_SURFBOARD_FORM':
       return initialState;
@@ -16,3 +16,4 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
+}

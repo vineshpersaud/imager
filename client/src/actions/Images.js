@@ -25,6 +25,7 @@ export const getImages = () => {
 
 
 export const createImage= image => {
+  debugger
   return dispatch => {
     return fetch(`http://localhost:3000/images`, {
       method: "POST",
@@ -33,11 +34,15 @@ export const createImage= image => {
       },
       body: JSON.stringify({ image: image })
     })
-      .then(response => response.json())
-      .then(image => {
-        dispatch(addImage(image))
-        dispatch(resetImageForm())
-      })
+    .then((response) => {return response.json()})
+    .then((image)=>{
+       dispatch(addImage(image))
+    })
+      // .then(response => response.json())
+      // .then(image => {
+      //   dispatch(addImage(image))
+      //   dispatch(resetImageForm())
+      // })
       .catch(error => console.log(error))
   }
 }

@@ -7,21 +7,27 @@ import { createImage } from '../actions/images';
 
 class ImageForm extends Component {
 
-  handleOnChange = e =>{
-    const { name, value } = e.target;
-    const currentimageFormData = Object.assign({}, this.props.imageFormData, {
+  state = {
+    title: '',
+    description: '',
+    image: ''
+  }
+
+  handleOnChange = event => {
+    const { value, name } = event.target;
+    this.setState({
       [name]: value
-    })
-    this.props.updateImageFormData(currentimageFormData)
+    });
   }
 
   handleOnSubmit = e =>{
       e.preventDefault()
-      this.props.createImage(this.props.imageFormData)
+      debugger
+      this.props.createImage(this.state)
   }
 
   render(){
-    // const { title, description, image} = this.props.imageFormData;
+   const { title, description, image} = this.state;
     return (
     <div>
       <div>
@@ -34,7 +40,7 @@ class ImageForm extends Component {
             type="text"
             onChange={this.handleOnChange}
             name="title"
-            value={this.title}
+            value={title}
             />
        </div>
 
@@ -44,7 +50,7 @@ class ImageForm extends Component {
             type="text"
             name="description"
             onChange={this.handleOnChange}
-            value={this.description}
+            value={description}
             />
         </div>
 
@@ -54,11 +60,11 @@ class ImageForm extends Component {
             type="file"
             name="image"
             onChange={this.handleOnChange}
-            value={this.description}
+            value={image}
             accept="image/*"
             />
         </div>
-        <button type="submit">Create User</button>
+        <button type="submit">Upload Image</button>
       </form>
     </div>)
   }

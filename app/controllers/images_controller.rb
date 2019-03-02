@@ -1,5 +1,5 @@
 class ImagesController <ApplicationController
-
+  skip_before_action :verify_authenticity_token
   def index
     @images = Image.all
     render json:@images, :methods => :image
@@ -7,9 +7,6 @@ class ImagesController <ApplicationController
 
   def show
     @image = Image.find(params[:id])
-    # redirect_to api_image_path(@image)
-    # render json: render_to_string('html_file_name')
-    # render file: 'public/system/images/images/000/000/001/large/kitten.jpg'
     render :json => @image, :methods => :image
   end
 
