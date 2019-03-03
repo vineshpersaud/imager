@@ -19,18 +19,10 @@ class ImageForm extends Component {
     this.setState({
         image: file
     })
-    debugger
   }
 
   onDrop = (acceptedFiles, rejectedFiles) => {
-    console.log(acceptedFiles)
-    // if (acceptedFiles){
-    //   this.setState({
-    //     image: acceptedFiles[0].path
-    //   })
-    // }
     if (acceptedFiles) {
-      debugger
       let data = new FormData();
       data.append('image', acceptedFiles);
         this.setState({
@@ -49,6 +41,11 @@ class ImageForm extends Component {
   handleOnSubmit = e =>{
       e.preventDefault()
       this.props.createImage(this.state)
+      this.setState({
+        title: '',
+        description: '',
+        image: ''
+      });
   }
 
   render(){

@@ -37,34 +37,8 @@ export const createImage= image => {
     })
       .then((response) => {return response.json()})
       .then((image)=>{
-        addImage(image)
+         dispatch(addImage(image))
     })
-      // .then(response => response.json())
-      // .then(image => {
-      //   dispatch(addImage(image))
-      //   dispatch(resetImageForm())
-      // })
       .catch(error => console.log(error))
   }
 }
-
-
-// export const createImage= image => {
-//   const body = new FormData();
-//   body.append('title', image.title);
-//   body.append('description', image.description);
-//   body.append('image', image.image);
-//   debugger
-//     return fetch(`http://localhost:3000/images`, {
-//       method: "POST",
-//       headers: {
-//         'Content-Type': ' multipart/form-data'
-//       },
-//       body: body
-//     })
-//     .then((response) => {return response.json()})
-//     .then((image)=>{
-//        addImage(image)
-//     })
-//       .catch(error => console.log(error))
-// }
