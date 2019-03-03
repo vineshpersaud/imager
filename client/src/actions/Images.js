@@ -25,18 +25,19 @@ export const getImages = () => {
 
 
 export const createImage= image => {
-  debugger
+    const body = new FormData(image);
+    body.append('image[title]', image.title);
+    body.append('image[description]', image.description);
+    body.append('image[picture]', image.image);
+
   return dispatch => {
     return fetch(`http://localhost:3000/images`, {
       method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ image: image })
+      body: body
     })
-    .then((response) => {return response.json()})
-    .then((image)=>{
-       dispatch(addImage(image))
+      .then((response) => {return response.json()})
+      .then((image)=>{
+        addImage(image)
     })
       // .then(response => response.json())
       // .then(image => {
@@ -46,3 +47,24 @@ export const createImage= image => {
       .catch(error => console.log(error))
   }
 }
+
+
+// export const createImage= image => {
+//   const body = new FormData();
+//   body.append('title', image.title);
+//   body.append('description', image.description);
+//   body.append('image', image.image);
+//   debugger
+//     return fetch(`http://localhost:3000/images`, {
+//       method: "POST",
+//       headers: {
+//         'Content-Type': ' multipart/form-data'
+//       },
+//       body: body
+//     })
+//     .then((response) => {return response.json()})
+//     .then((image)=>{
+//        addImage(image)
+//     })
+//       .catch(error => console.log(error))
+// }

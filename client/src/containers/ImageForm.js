@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-
+import Dropzone from 'react-dropzone'
+import classNames from 'classnames'
 
 import { updateImageFormData } from '../actions/imageForm';
 import { createImage } from '../actions/images';
@@ -13,6 +14,31 @@ class ImageForm extends Component {
     image: ''
   }
 
+  handleOnFileChange = (e) => {
+    let file = e.target.files[0];
+    this.setState({
+        image: file
+    })
+    debugger
+  }
+
+  onDrop = (acceptedFiles, rejectedFiles) => {
+    console.log(acceptedFiles)
+    // if (acceptedFiles){
+    //   this.setState({
+    //     image: acceptedFiles[0].path
+    //   })
+    // }
+    if (acceptedFiles) {
+      debugger
+      let data = new FormData();
+      data.append('image', acceptedFiles);
+        this.setState({
+          image: acceptedFiles[0]
+        })
+    }
+  }
+
   handleOnChange = event => {
     const { value, name } = event.target;
     this.setState({
@@ -22,7 +48,6 @@ class ImageForm extends Component {
 
   handleOnSubmit = e =>{
       e.preventDefault()
-      debugger
       this.props.createImage(this.state)
   }
 
@@ -59,11 +84,30 @@ class ImageForm extends Component {
            <input
             type="file"
             name="image"
-            onChange={this.handleOnChange}
-            value={image}
+            onChange={this.handleOnFileChange}
+            // value={image}
             accept="image/*"
             />
         </div>
+
+        <Dropzone onDrop={this.onDrop}>
+          {({getRootProps, getInputProps, isDragActive}) => {
+            return (
+              <div
+                {...getRootProps()}
+                className={classNames('dropzone', {'dropzone--isActive': isDragActive})}
+              >
+                <input {...getInputProps()} />
+                {
+                  isDragActive ?
+                    <p>Drop files here...</p> :
+                    <p>Try dropping some files here, or click to select files to upload.</p>
+                }
+              </div>
+            )
+          }}
+        </Dropzone>
+
         <button type="submit">Upload Image</button>
       </form>
     </div>)
