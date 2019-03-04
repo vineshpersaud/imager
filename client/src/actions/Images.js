@@ -42,3 +42,12 @@ export const createImage= image => {
       .catch(error => console.log(error))
   }
 }
+
+export const deleteImage = (imageId) => {
+  fetch(`http://localhost:3000/images/${imageId}`, {
+     method: 'DELETE',
+  }).then(response => {
+     // dispatch(removeImage(imageId));
+  })
+  .catch(error => console.log(error));
+};

@@ -20,6 +20,15 @@ class ImagesController <ApplicationController
     end
   end
 
+  def destroy
+    @image = Image.find(params[:id])
+    if @image.destroy
+      render status: 204
+    else
+      render json: { message: "Unable to remove this image" }, status: 400
+  end
+end
+
 
 private
   def image_params
