@@ -14,6 +14,13 @@ const addImage = image => {
   }
 }
 
+const removeImage = image => {
+  return {
+    type: 'REMOVE_IMAGE_SUCCESS',
+    image
+  }
+}
+
 export const getImages = () => {
     return dispatch => {
       return fetch(`http://localhost:3000/images`)
@@ -43,11 +50,25 @@ export const createImage= image => {
   }
 }
 
-export const deleteImage = (imageId) => {
-  fetch(`http://localhost:3000/images/${imageId}`, {
+// export const deleteImage = (image) => {
+//   fetch(`http://localhost:3000/images/${image.id}`, {
+//      method: 'DELETE',
+//   })
+//   .then((response) => {return response.json()})
+//   .then(images => setImages(images))
+//   .catch(error => console.log(error));
+// };
+
+export const deleteImage = (image) => {
+  let imageId = image.id
+  return dispatch => {
+    return fetch(`http://localhost:3000/images/${image.id}`, {
      method: 'DELETE',
-  }).then(response => {
-     // dispatch(removeImage(imageId));
   })
+    .then((image)=>{
+           dispatch(removeImage(imageId))
+      })
+    .then(images => setImages(images))
   .catch(error => console.log(error));
-};
+  }
+}

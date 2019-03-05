@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 
 import {getImages} from '../actions/images';
+import {deleteImage} from '../actions/images';
 import ImageCard from '../components/ImageCard';
 
 class Images extends Component {
@@ -11,7 +12,7 @@ class Images extends Component {
   }
 
   handleDelete = (e) => {
-    console.log(e)
+    this.props.deleteImage(e)
   }
 
 
@@ -20,7 +21,9 @@ class Images extends Component {
     return (
       <div className="ImagesContainer">
         <h1>Images</h1>
-        {this.props.images.map(image => <ImageCard props={this.handleDelete()} key={image.id} image={image} />)}
+        {this.props.images.map(image =>  <ImageCard  key={image.id} image={image}
+          button=<button onClick={() => {this.handleDelete(image)}}>Delete</button>
+            />)}
     </div>
     )
   }
@@ -31,4 +34,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-  export default connect(mapStateToProps, { getImages})(Images);
+  export default connect(mapStateToProps, {deleteImage,getImages})(Images);
