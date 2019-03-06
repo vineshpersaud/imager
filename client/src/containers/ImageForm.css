@@ -1,0 +1,28 @@
+.dropzone {
+  width : 100%;
+  height : 20%;
+  border-radius: 5px;
+  background-color: white;
+  border : 2px solid black;
+
+  color: black;
+}
+
+.containerform{  width: 50%;
+  margin-left: 25%;
+  clear: both;
+}
+
+.containerform input {
+  width: 100%;
+  padding-right: 0;
+  clear: both;
+}
+
+.formcard{
+  background-color: gray;
+  width: 470px;
+  height: 370px;
+  margin-left: 35%;
+  border-radius: 5px;
+}

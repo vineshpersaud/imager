@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import Dropzone from 'react-dropzone'
 import classNames from 'classnames'
+import './ImageForm.css';
 
 import { updateImageFormData } from '../actions/imageForm';
 import { createImage } from '../actions/images';
@@ -51,22 +52,24 @@ class ImageForm extends Component {
   render(){
    const { title, description, image} = this.state;
     return (
-    <div>
+    <div className="formcard">
       <div>
         <h1> Upload Image</h1>
       </div>
-        <form onSubmit={this.handleOnSubmit}>
-        <div>
-           <label htmlFor="title">Title:</label>
-           <input
-            type="text"
-            onChange={this.handleOnChange}
-            name="title"
-            value={title}
-            />
-       </div>
 
-        <div>
+        <form className='containerform' onSubmit={this.handleOnSubmit}>
+          <div>
+             <label htmlFor="title">Title:</label>
+             <input
+              type="text"
+              onChange={this.handleOnChange}
+              name="title"
+              value={title}
+              />
+         </div>
+         <br></br>
+
+         <div>
            <label htmlFor="description">Description:</label>
            <input
             type="text"
@@ -76,18 +79,13 @@ class ImageForm extends Component {
             />
         </div>
 
-        <div>
-           <label htmlFor="image">Image:</label>
-           <input
-            type="file"
-            name="image"
-            onChange={this.handleOnFileChange}
-            // value={image}
-            accept="image/*"
-            />
-        </div>
+        <br></br>
 
-        <Dropzone onDrop={this.onDrop}>
+
+
+        <Dropzone
+          className="dropzone"
+          onDrop={this.onDrop}>
           {({getRootProps, getInputProps, isDragActive}) => {
             return (
               <div
@@ -97,13 +95,15 @@ class ImageForm extends Component {
                 <input {...getInputProps()} />
                 {
                   isDragActive ?
-                    <p>Drop files here...</p> :
-                    <p>Try dropping some files here, or click to select files to upload.</p>
+                    <p>Drop file here...</p> :
+                    <p>Drop image here or click to select files to upload.</p>
                 }
+                <p>{this.state.image.name}</p>
               </div>
             )
           }}
         </Dropzone>
+        <br></br>
 
         <button type="submit">Upload Image</button>
       </form>
