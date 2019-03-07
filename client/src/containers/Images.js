@@ -37,4 +37,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-  export default connect(mapStateToProps, {deleteImage,getImages})(Images);
+  export default connect(mapStateToProps, {deleteImage,getImages,ImageShow})(Images);

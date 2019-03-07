@@ -6,7 +6,8 @@ import Images from './containers/Images.js'
 import ImageShow from './containers/ImageShow.js'
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
 import NavBar from './components/NavBar';
 
