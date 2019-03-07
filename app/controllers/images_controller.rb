@@ -31,7 +31,7 @@ class ImagesController <ApplicationController
   end
 
   def comment
-    comment = @image.comment.build(comment_params)
+    comment = @image.comments.build(comment_params)
     if comment.save
       render json: comment, :methods => :url
     else

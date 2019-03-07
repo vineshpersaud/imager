@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'active_model_serializers'
 ruby '2.4.4'
 gem 'bcrypt'
 gem "paperclip", "~> 6.0.0"
