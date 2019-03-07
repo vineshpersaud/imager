@@ -32,7 +32,7 @@ const App = (props) => {
         <NavBar />
         <Route exact path="/images" component={Images} />
         <Route exact path="/images/new" component={ImageForm} />
-        <Route path={`images/:imageId`} component={ImageShow}/>
+        <Route path={`/images/:imageId`} component={ImageShow}/>
       </div>
     </Router>
   );

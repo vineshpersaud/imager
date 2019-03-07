@@ -1,9 +1,10 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
-
+import { Route } from 'react-router-dom';
 import {getImages} from '../actions/images';
 import {deleteImage} from '../actions/images';
 import ImageCard from '../components/ImageCard';
+import ImageShow from './ImageShow';
 
 class Images extends Component {
 
@@ -17,11 +18,14 @@ class Images extends Component {
       <div className="ImagesContainer">
         <h1>Images</h1>
         {this.props.images.map(image =>
+          <div>
           <ImageCard
             key={image.id}
             image={image}
             props= {this.props}
-          />)
+          />
+          </div>
+      )
         }
     </div>
     )
