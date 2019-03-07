@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Images from './Images';
+import CommentForm from './CommentForm.js'
 
 const ImageShow = ({ image }) =>
 
@@ -8,6 +9,7 @@ const ImageShow = ({ image }) =>
     <h3>{image.title}</h3>
     <h3>{image.description}</h3>
     <img src={"http://localhost:3000"+image.url} alt={image.description}/>
+    <CommentForm/>
   </div>
 
 const mapStateToProps = (state, ownProps) => {

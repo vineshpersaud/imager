@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import UserForm from './containers/UserForm.js'
 import ImageForm from './containers/ImageForm.js'
 import Images from './containers/Images.js'
 import ImageShow from './containers/ImageShow.js'

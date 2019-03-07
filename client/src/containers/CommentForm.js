@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class UserForm extends Component {
+class CommentForm extends Component {
 
   handleOnChange = e =>{
 
@@ -15,7 +15,7 @@ class UserForm extends Component {
 
     <div>
       <div>
-        <h1> User Signup </h1>
+        <h1> Post Comment</h1>
       </div>
         <form onSubmit={this.handleOnSubmit}>
         <div>
@@ -24,18 +24,14 @@ class UserForm extends Component {
        </div>
 
         <div>
-           <label htmlFor="email">E-mail:</label>
-           <input type="text" name="email"/>
+           <label htmlFor="comment">Comment:</label>
+           <input type="textarea" name="comment"/>
         </div>
 
-        <div>
-           <label htmlFor="password">Password:</label>
-           <input type="password" name="password"/>
-        </div>
-        <button type="submit">Create User</button>
+        <button type="submit">Post Comment</button>
       </form>
     </div>)
   }
 }
 
-export default UserForm
+export default CommentForm
