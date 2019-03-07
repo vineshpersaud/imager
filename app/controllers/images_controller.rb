@@ -1,13 +1,15 @@
 class ImagesController <ApplicationController
+  before_action :set_image, only: [:show,:destroy,:comment]
   protect_from_forgery with: :null_session
   skip_before_action :verify_authenticity_token
+
+
   def index
     @images = Image.all
     render json:@images, methods: :url
   end
 
   def show
-    @image = Image.find(params[:id])
     render :json => @image, methods: :url
   end
 
@@ -21,17 +23,33 @@ class ImagesController <ApplicationController
   end
 
   def destroy
-    @image = Image.find(params[:id])
     if @image.destroy
       render status: 204
     else
       render json: { message: "Unable to remove this image" }, status: 400
+    end
   end
-end
 
+  def comment
+    comment = @image.comment.build(comment_params)
+    if comment.save
+      render json: comment, :methods => :url
+    else
+      render json:{message: comment.errors}, status: 400
+    end
+  end
 
 private
+
+  def set_image
+    @image = Image.find(params[:id])
+  end
+
   def image_params
     params.require(:image).permit(:title,:description,:picture)
+  end
+
+  def comment_params
+    params.require(:comment).permit(:username,:text)
   end
 end
