@@ -28,12 +28,14 @@ import NavBar from './components/NavBar';
 const App = (props) => {
   return (
     <Router>
+      <Switch>
       <div className="app">
         <NavBar />
         <Route exact path="/images" component={Images} />
         <Route exact path="/images/new" component={ImageForm} />
-        <Route path={`/images/:imageId`} component={ImageShow}/>
+        <Route exact path={`/images/:imageId(\\d+)`} component={ImageShow}/>
       </div>
+    </Switch>
     </Router>
   );
 };

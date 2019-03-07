@@ -7,7 +7,7 @@ const CommentCard = ({ comment }) => (
 
 
   <div >
-    <h3>{comment.username}</h3>
+    <p>{comment.username}</p>
     <h3>{comment.text}</h3>
   </div>
 )
