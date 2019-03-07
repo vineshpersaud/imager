@@ -2,14 +2,20 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Images from './Images';
 import CommentForm from './CommentForm.js'
+import CommentCard from '../components/CommentCard.js'
 
 const ImageShow = ({ image }) =>
-
   <div>
     <h3>{image.title}</h3>
     <h3>{image.description}</h3>
     <img src={"http://localhost:3000"+image.url} alt={image.description}/>
     <CommentForm/>
+    {image.comments.map(comment=>
+      <CommentCard comment={comment}/>
+    )}
+  <div>
+
+  </div>
   </div>
 
 const mapStateToProps = (state, ownProps) => {
@@ -22,4 +28,4 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps)(ImageShow);
+export default connect(mapStateToProps,{CommentCard})(ImageShow);
