@@ -3,6 +3,7 @@ import './App.css';
 import UserForm from './containers/UserForm.js'
 import ImageForm from './containers/ImageForm.js'
 import Images from './containers/Images.js'
+import ImageShow from './containers/ImageShow.js'
 import {
   BrowserRouter as Router,
   Route
@@ -31,6 +32,7 @@ const App = (props) => {
         <NavBar />
         <Route exact path="/images" component={Images} />
         <Route exact path="/images/new" component={ImageForm} />
+        <Route path={`images/:imageId`} component={ImageShow}/>
       </div>
     </Router>
   );

@@ -11,19 +11,18 @@ class Images extends Component {
     this.props.getImages()
   }
 
-  handleDelete = (e) => {
-    this.props.deleteImage(e)
-  }
-
-
 
   render(){
     return (
       <div className="ImagesContainer">
         <h1>Images</h1>
-        {this.props.images.map(image =>  <ImageCard  key={image.id} image={image}
-          button=<button onClick={() => {this.handleDelete(image)}}>Delete</button>
-            />)}
+        {this.props.images.map(image =>
+          <ImageCard
+            key={image.id}
+            image={image}
+            props= {this.props}
+          />)
+        }
     </div>
     )
   }
