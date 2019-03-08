@@ -1,9 +1,9 @@
 .ImageCard{
   float: left;
-  margin: 2%;
+  margin: 1%;
 
   background: #535c68;
-  width: 18%;
+  width: 400px;
   height: 15%;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -12,4 +12,34 @@
 
 .ImageCard img{
   width: 100%;
+}
+
+.ImageCard h3{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.ImageCard ul {
+  width: 100%;
+  font-size:16px;
+  color: #c5c8cc;
+  list-style-type: none;
+  padding-left: 4px;
+}
+
+
+.ImageCard ul li {
+  display: inline-block;
+  list-style-type: none;
+  margin-right: 45px;
+}
+
+
+.myButton {
+  margin-left: 153px;
+  background-color:#e4685d;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:14px;
+	text-decoration:none;
 }

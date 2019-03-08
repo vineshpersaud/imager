@@ -1,0 +1,20 @@
+.comment{
+  background-color: #535c68;
+  border-radius:15px 15px 15px 0px;
+  width: 25%;
+  margin-left: 140px;
+}
+
+.comment h3{
+  color: #bfc4cc;
+  font-size: 16px;
+  padding-left: 8px;
+  padding-bottom: 10px;
+}
+
+
+.comment p{
+  font-size: 10px;
+  color: #fcfcfc;
+  padding-left: 12px;
+}

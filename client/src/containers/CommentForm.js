@@ -6,7 +6,7 @@ import { createComment } from '../actions/comments';
 class CommentForm extends Component {
 
   state = {
-    username: '',
+    username: 'anonymous',
     text: ''
   }
 
