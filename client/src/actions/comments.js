@@ -5,6 +5,22 @@ const addComment= comment => {
   }
 }
 
+const setComments= comments => {
+  return {
+    type: 'GET_COMMENTS_SUCCESS',
+    comments
+  }
+}
+
+export const getComments = (image) => {
+  debugger
+    return dispatch => {
+      return fetch(`http://localhost:3000/images/${image.id}`)
+        .then(response => response.json())
+        .then(image =>dispatch(setComments(image.comments)))
+        .catch(error => console.log(error));
+    }
+}
 
 export const createComment= (comment,imageId) => {
   debugger
@@ -17,8 +33,8 @@ export const createComment= (comment,imageId) => {
       body: JSON.stringify({ comment: comment })
     })
       .then(response => response.json())
-      .then(comment => {
-        // dispatch(addComment(comment))
+      .then(image => {
+        dispatch(addComment(image))
         // dispatch(resetCommentForm())
       })
       .catch(error => console.log(error))

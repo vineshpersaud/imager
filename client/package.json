@@ -5,6 +5,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "react": "^16.8.2",
+    "react-addons-update": "^15.6.2",
     "react-dom": "^16.8.2",
     "react-dropzone": "^9.0.0",
     "react-redux": "^6.0.1",

@@ -33,7 +33,7 @@ class ImagesController <ApplicationController
   def comment
     comment = @image.comments.build(comment_params)
     if comment.save
-      render json: comment, :methods => :url
+      render json: @image, :methods => :url
     else
       render json:{message: comment.errors}, status: 400
     end

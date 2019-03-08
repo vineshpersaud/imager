@@ -7,9 +7,10 @@ import {
 import thunk from 'redux-thunk';
 
 import images from './reducers/images';
+import comments from './reducers/comments';
 
 const reducers = combineReducers({
-  images,
+  images,comments
 });
 const middleware = [thunk];
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
