@@ -26,7 +26,7 @@ class ImageShow extends Component {
       <CommentForm
         imageId={image.id}
         />
-      {this.props.comments.map(comment=>
+      {this.props.comments.reverse().map(comment=>
         <CommentCard
           comment={comment}
           />
