@@ -1,9 +1,18 @@
 .navbar a{
-  width: 100px;
+ width: 100px;
+ height: 100%;
  padding: 12px;
- margin: 0 6px 6px;
- background: #535c68;
+ margin:6px;
+ padding-top: 10px;
  textDecoration: none;
  color: white;
+ text-decoration: none;
+ font-size: 20px;
+}
 
+.navbar{
+  background: #ec008c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fc6767, #ec008c);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fc6767, #ec008c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height:50px;
 }
