@@ -39,6 +39,17 @@ class ImagesController <ApplicationController
     end
   end
 
+
+  def like
+    image = Image.find(params[:id])
+    image.likes += 1
+    if image.save
+      render json: @image, :methods => :url
+    else
+      render json:{message: comment.errors}, status: 400
+    end
+  end
+
 private
 
   def set_image

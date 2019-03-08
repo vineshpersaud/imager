@@ -4,5 +4,6 @@ Rails.application.routes.draw do
     resources :users
     resources :images
     post "/images/:id/comments/create" => "images#comment"
+    post "/images/:id/like" => "images#like"
 
 end

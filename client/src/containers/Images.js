@@ -5,6 +5,7 @@ import {getImages} from '../actions/images';
 import {deleteImage} from '../actions/images';
 import ImageCard from '../components/ImageCard';
 import ImageShow from './ImageShow';
+import {likeImage} from '../actions/images';
 
 class Images extends Component {
 
@@ -37,4 +38,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-  export default connect(mapStateToProps, {deleteImage,getImages,ImageShow})(Images);
+  export default connect(mapStateToProps, {deleteImage,getImages,ImageShow,likeImage})(Images);

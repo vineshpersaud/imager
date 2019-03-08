@@ -72,3 +72,18 @@ export const deleteImage = (image) => {
   .catch(error => console.log(error));
   }
 }
+
+
+export const likeImage = (image) => {
+  let imageId = image.id
+  return dispatch => {
+    return fetch(`http://localhost:3000/images/${image.id}/like`, {
+     method: 'POST',
+  })
+    .then((image)=>{
+           // dispatch(updateImage(imageId))
+      })
+    .then(images => setImages(images))
+  .catch(error => console.log(error));
+  }
+}

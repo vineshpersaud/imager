@@ -34,6 +34,11 @@
   margin-right: 45px;
 }
 
+.ImageCard a {
+  text-decoration: none;
+  color: #c5c8cc;
+}
+
 
 .myButton {
   margin-left: 153px;
