@@ -9,9 +9,13 @@ const ImageShow = ({ image }) =>
     <h3>{image.title}</h3>
     <h3>{image.description}</h3>
     <img src={"http://localhost:3000"+image.url} alt={image.description}/>
-    <CommentForm/>
+    <CommentForm
+      imageId={image.id}
+      />
     {image.comments.map(comment=>
-      <CommentCard comment={comment}/>
+      <CommentCard
+        comment={comment}
+        />
     )}
   <div>
 
@@ -28,4 +32,4 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps,{CommentCard})(ImageShow);
+export default connect(mapStateToProps,{CommentForm})(ImageShow);

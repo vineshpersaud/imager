@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { createComment } from '../actions/comments';
+
 
 class CommentForm extends Component {
 
@@ -16,7 +19,7 @@ class CommentForm extends Component {
 
   handleOnSubmit = e =>{
       e.preventDefault()
-      alert('Working')
+      this.props.createComment(this.state,this.props.imageId)
   }
 
   render(){
@@ -60,4 +63,6 @@ const mapStateToProps = state => {
   }
 }
 
-export default CommentForm
+export default connect(mapStateToProps, {
+  createComment
+})(CommentForm);
