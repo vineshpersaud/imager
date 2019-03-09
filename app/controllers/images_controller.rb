@@ -1,5 +1,5 @@
 class ImagesController <ApplicationController
-  before_action :set_image, only: [:show,:destroy,:comment]
+  before_action :set_image, only: [:show,:destroy,:comment,:like]
   protect_from_forgery with: :null_session
   skip_before_action :verify_authenticity_token
 
@@ -44,7 +44,7 @@ class ImagesController <ApplicationController
     image = Image.find(params[:id])
     image.likes += 1
     if image.save
-      render json: @image, :methods => :url
+      render json: image, :methods => :url
     else
       render json:{message: comment.errors}, status: 400
     end

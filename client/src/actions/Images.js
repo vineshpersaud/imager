@@ -21,6 +21,20 @@ const removeImage = image => {
   }
 }
 
+const updateImage = image => {
+  return {
+    type: 'REMOVE_IMAGE_SUCCESS',
+    image
+  }
+}
+
+const addLike = image => {
+  return {
+    type: 'ADD_LIKE_SUCCESS',
+    image
+  }
+}
+
 export const getImages = () => {
     return dispatch => {
       return fetch(`http://localhost:3000/images`)
@@ -80,10 +94,10 @@ export const likeImage = (image) => {
     return fetch(`http://localhost:3000/images/${image.id}/like`, {
      method: 'POST',
   })
+    .then((response) => {return response.json()})
     .then((image)=>{
-           // dispatch(updateImage(imageId))
+            dispatch(addLike(image))
       })
-    .then(images => setImages(images))
   .catch(error => console.log(error));
   }
 }
