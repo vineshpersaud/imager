@@ -19,7 +19,7 @@ const ImageCard = ({ image,props }) => (
       <h3>{image.title}</h3>
       <p>{image.description}</p>
       <ul>
-        <li><a href="#" onClick={() => {props.likeImage(image)}} >&#8679; {image.likes}</a></li>
+        <li><a href="javascript:;" onClick={() => {props.likeImage(image)}} >&#8679; {image.likes}</a></li>
         <li>&#9993; {image.comments.length}</li>
         <li><button className="myButton" onClick={() => {props.deleteImage(image)}}>Delete</button></li>
       </ul>
