@@ -1,15 +1,15 @@
 import React from 'react';
+import './ImageShowCard.css';
 
-
-const ImageShowCard = ({ image,props }) => (
+const ImageShowCard = ({ image }) => (
 
     <div key={image.id} className="ImageShowCard">
-      <h3>{image.title}</h3>
-      <h3>{image.description}</h3>
+      <h2>{image.title}</h2>
       <img
         src={"http://localhost:3000"+image.url}
         alt={image.description}
       />
+    <h4>{image.description}</h4>
     </div>
 
 )

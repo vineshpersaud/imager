@@ -5,7 +5,7 @@ class ImagesController <ApplicationController
 
 
   def index
-    @images = Image.all
+    @images = Image.all.ordered_by_likes
     render json:@images, methods: :url
   end
 

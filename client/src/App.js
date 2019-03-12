@@ -10,27 +10,13 @@ import {
 } from 'react-router-dom';
 import NavBar from './components/NavBar';
 
-// class App extends Component {
-//   render() {
-//     return (
-//
-//       <div className="App">
-//         <ImageForm/>
-//         <Images/>
-//       </div>
-//     );
-//   }
-// }
-//
-// export default App;
-
-
 const App = (props) => {
   return (
     <Router>
       <Switch>
       <div className="app">
         <NavBar />
+        <Route exact path="/" component={Images} />
         <Route exact path="/images" component={Images} />
         <Route exact path="/images/new" component={ImageForm} />
         <Route exact path={`/images/:imageId(\\d+)`} component={ImageShow}/>

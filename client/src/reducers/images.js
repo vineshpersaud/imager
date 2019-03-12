@@ -9,7 +9,7 @@ export default (state = [], action) => {
         return state.filter(image => image.id !== action.image)
     case 'ADD_LIKE_SUCCESS':
       return state.map(function(image){
-        if (image.id == action.image.id){
+        if (image.id === action.image.id){
           return action.image}
         else{
           return image}

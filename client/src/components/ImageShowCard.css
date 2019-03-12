@@ -1,0 +1,13 @@
+.ImageShowCard{
+  background-color: #182848;
+
+  width: 800px;
+  margin-left: 30%;;
+}
+
+
+.ImageShowCard img{
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+}

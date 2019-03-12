@@ -22,7 +22,7 @@ class ImageShow extends Component {
         imageId={image.id}
         />
 
-      {this.props.comments.reverse().map(comment=>
+      {this.props.comments.map(comment=>
         <CommentCard
           comment={comment}
         />

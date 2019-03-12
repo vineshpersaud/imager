@@ -30,6 +30,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "case-sensitive-paths-webpack-plugin": "^2.2.0",
     "redux-devtools": "^3.5.0"
   }
 }
