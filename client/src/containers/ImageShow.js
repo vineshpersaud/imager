@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Images from './Images';
 import CommentForm from './CommentForm.js'
 import CommentCard from '../components/CommentCard.js'
+import ImageShowCard from '../components/ImageShowCard'
 import {getComments} from '../actions/comments';
 
 class ImageShow extends Component {
@@ -14,29 +15,23 @@ class ImageShow extends Component {
 
   render(){
   const {image} = this.props
-
    return(
     <div>
-      <h3>{image.title}</h3>
-      <h3>{image.description}</h3>
-      <img
-        src={"http://localhost:3000"+image.url}
-        alt={image.description}
-      />
+      <ImageShowCard image={image}/>
+
       <CommentForm
         imageId={image.id}
         />
+
       {this.props.comments.reverse().map(comment=>
         <CommentCard
           comment={comment}
-          />
+        />
       )}
-    <div>
-
-    </div>
     </div>)
   }
 }
+
 const mapStateToProps = (state, ownProps) => {
   const image = state.images.find(image => image.id == ownProps.match.params.imageId)
   if (image) {
