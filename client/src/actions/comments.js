@@ -13,7 +13,6 @@ const setComments= comments => {
 }
 
 export const getComments = (image) => {
-  debugger
     return dispatch => {
       return fetch(`http://localhost:3000/images/${image.id}`)
         .then(response => response.json())
@@ -23,7 +22,6 @@ export const getComments = (image) => {
 }
 
 export const createComment= (comment,imageId) => {
-  debugger
   return dispatch => {
     return fetch(`http://localhost:3000/images/${imageId}/comments/create`, {
       method: "POST",

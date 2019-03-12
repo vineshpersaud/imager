@@ -10,13 +10,12 @@ class ImageShow extends Component {
 
   componentDidMount() {
     this.props.getComments(this.props.image)
-    debugger
   }
 
   render(){
   const {image} = this.props
    return(
-    <div>
+    <div key={image.id}>
       <ImageShowCard image={image}/>
 
       <CommentForm
