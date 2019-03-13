@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { createComment } from '../actions/comments';
+import './CommentForm.css'
 
 
 class CommentForm extends Component {
@@ -26,11 +27,22 @@ class CommentForm extends Component {
     const {username,text} = this.state
 
     return (
-    <div>
-      <div>
-        <h1> Post Comment</h1>
-      </div>
-        <form onSubmit={this.handleOnSubmit}>
+    <div className='commentform'>
+
+        <form  onSubmit={this.handleOnSubmit}>
+
+        <div>
+           
+           <input
+             type="textarea"
+             name="text"
+             id = "commentbox"
+             placeholder="Write a comment"
+             onChange={this.handleOnChange}
+             value={text}
+             />
+        </div>
+
         <div>
            <label htmlFor="username">Username:</label>
            <input
@@ -40,16 +52,6 @@ class CommentForm extends Component {
              value={username}
              />
        </div>
-
-        <div>
-           <label htmlFor="text">Comment:</label>
-           <input
-             type="textarea"
-             name="text"
-             onChange={this.handleOnChange}
-             value={text}
-             />
-        </div>
 
         <button type="submit">Post Comment</button>
       </form>

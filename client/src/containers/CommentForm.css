@@ -1,0 +1,37 @@
+.commentform{
+  background-color: #4b6cb7 ;
+  width:600px;;
+  height: 150px;
+  margin-left: 30%;
+  border-radius: 5px;
+}
+
+.commentform label{
+  margin-left: 10px;
+}
+#commentbox::placeholder{
+  color:white;
+  font:1400px;
+  margin: 0;
+  padding: 0;
+}
+#commentbox{
+  background-color: #4b6cb7 ;
+  height: 60px;
+  width: 90%;
+  color: white;
+  font-size: 12px;
+  outline: none;
+  margin: 10px
+}
+
+button {
+    margin-left: 460px ;
+    padding:10px 15px;
+    background:#182848;
+    color: white;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 0px;
+}
