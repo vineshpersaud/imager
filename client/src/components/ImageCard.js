@@ -9,8 +9,6 @@ import { Link } from 'react-router-dom';
 
 
 const ImageCard = ({ image,props }) => (
-
-
   <div key={image.id} className="ImageCard">
       <Link to={`/images/${image.id}`}>
         <img src={"http://localhost:3000"+image.url} alt={image.description}/>
@@ -23,9 +21,6 @@ const ImageCard = ({ image,props }) => (
         <li>&#9993; {image.comments.length}</li>
         <li><button className="myButton" onClick={() => {props.deleteImage(image)}}>Delete</button></li>
       </ul>
-
-
-    <p></p>
 
   </div>
 )

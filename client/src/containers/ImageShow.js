@@ -5,6 +5,8 @@ import CommentForm from './CommentForm.js'
 import CommentCard from '../components/CommentCard.js'
 import ImageShowCard from '../components/ImageShowCard'
 import {getComments} from '../actions/comments';
+import {likeImage} from '../actions/images';
+import {getImages} from '../actions/images';
 
 class ImageShow extends Component {
 
@@ -17,7 +19,6 @@ class ImageShow extends Component {
    return(
     <div key={image.id}>
       <ImageShowCard image={image}/>
-
       <CommentForm
         imageId={image.id}
         />
@@ -32,7 +33,7 @@ class ImageShow extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const image = state.images.find(image => image.id == ownProps.match.params.imageId)
+  const image = state.images.find(image => image.id === parseInt(ownProps.match.params.imageId))
   if (image) {
     return {
       image,
@@ -45,4 +46,4 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps,{CommentForm,getComments})(ImageShow);
+export default connect(mapStateToProps,{CommentForm,getComments,likeImage})(ImageShow);

@@ -9,7 +9,7 @@ const ImageShowCard = ({ image }) => (
         src={"http://localhost:3000"+image.url}
         alt={image.description}
       />
-    <h4>{image.description}</h4>
+      <h4>{image.description}</h4>
     </div>
 
 )

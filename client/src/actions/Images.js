@@ -1,5 +1,3 @@
-import { resetImageForm } from './imageForm';
-
 const setImages = images => {
   return {
     type: 'GET_IMAGES_SUCCESS',
@@ -91,7 +89,7 @@ export const deleteImage = (image) => {
 export const likeImage = (image) => {
   let imageId = image.id
   return dispatch => {
-    return fetch(`http://localhost:3000/images/${image.id}/like`, {
+    return fetch(`http://localhost:3000/images/${imageId}/like`, {
      method: 'POST',
   })
     .then((response) => {return response.json()})
