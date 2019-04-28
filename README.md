@@ -4,7 +4,9 @@
   and a react frontend.
 
   ![site preview](https://cdn-images-1.medium.com/max/1600/1*fJ8bcxoUc6UcM4VqotmdEw.png)
-  ![rails API](https://medium.com/@VineshPersaud/react-with-rails-api-92cb79d211df)
+
+  ![rails API](https://cdn-images-1.medium.com/max/2400/1*H2bGrc9gYhNq519xnVaj_A.png)
+
 
 ## How to Run
   1. Fork and clone this repository
