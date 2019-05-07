@@ -9,10 +9,16 @@ import {likeImage} from '../actions/images';
 import {getImages} from '../actions/images';
 
 class ImageShow extends Component {
+  state ={
+      likes: 0
+  }
+
+
 
   componentDidMount() {
     this.props.getComments(this.props.image)
   }
+
 
   render(){
   const {image} = this.props

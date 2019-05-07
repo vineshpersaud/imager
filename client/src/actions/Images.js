@@ -44,6 +44,7 @@ export const getImages = () => {
 
 
 export const createImage= image => {
+  console.log('C')
     const body = new FormData(image);
     body.append('image[title]', image.title);
     body.append('image[description]', image.description);
@@ -56,10 +57,12 @@ export const createImage= image => {
     })
       .then((response) => {return response.json()})
       .then((image)=>{
+        console.log('D')
          dispatch(addImage(image))
     })
       .catch(error => console.log(error))
   }
+  console.log('E')
 }
 
 // export const deleteImage = (image) => {
